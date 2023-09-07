@@ -1,4 +1,4 @@
-const theme = {
+const mainTheme = {
   colors: {
     white: '#FFFFFF',
     gray1: '#F5F5F9',
@@ -66,6 +66,6 @@ const theme = {
   divider: {
     borderBottom: '1px solid #F5F5F9',
   },
-} as const;
+};
 
-export default theme;
+export default mainTheme;

@@ -2,15 +2,15 @@ import { ReactElement } from 'react';
 import { css, Global } from '@emotion/react';
 import emotionNormalize from 'emotion-normalize';
 
-import theme from './theme';
+import mainTheme from './theme';
 
 export const setGlobalStyles = css`
   ${emotionNormalize}
 
   body {
     font-family: Pretendard, sans-serif;
-    background-color: ${theme.colors.gray1};
-    color: ${theme.colors.black};
+    background-color: ${mainTheme.colors.gray1};
+    color: ${mainTheme.colors.black};
   }
 
   a {
@@ -56,7 +56,7 @@ export default GlobalStyles;
 
 const whiteBackgroundCss = css`
   body {
-    background-color: ${theme.colors.white};
+    background-color: ${mainTheme.colors.white};
   }
 `;
 

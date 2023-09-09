@@ -1,4 +1,4 @@
-import { StyledButton, SmallButton, ExtendedButton, PrimaryButton, SecondaryButton, TertiaryButton} from "./Button.styles";
+import { SmallButton, ExtendedButton, PrimaryButton, SecondaryButton, TertiaryButton} from "./Button.styles";
 import { css } from "@emotion/react";
 
 interface ButtonProps {
@@ -15,17 +15,17 @@ export const Button = ({
   onClick,
   ...props
 }: ButtonProps) => {
-  const buttonColor = color == 'Primary' ? PrimaryButton : color == 'Secondary' ? SecondaryButton : TertiaryButton;
+  const ButtonType = color == 'Primary' ? PrimaryButton : color == 'Secondary' ? SecondaryButton : TertiaryButton;
   const isExtended = extended ? ExtendedButton : SmallButton;
 
   return (
-    <StyledButton
+    <ButtonType
       type='button'
       onClick={onClick}
-      css={css([isExtended, buttonColor])}
+      css={isExtended}
       {...props}
     >
       {label}
-    </StyledButton>
+    </ButtonType>
   );
 };

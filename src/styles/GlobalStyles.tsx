@@ -53,16 +53,3 @@ const GlobalStyles = (): ReactElement => {
 };
 
 export default GlobalStyles;
-
-const whiteBackgroundCss = css`
-  body {
-    background-color: ${mainTheme.colors.white};
-  }
-`;
-
-/**
- * 배경색이 흰색인 route에서 사용되는 GlobalStyles 입니다
- */
-export const WhiteBackgroundGlobalStyles = () => {
-  return <Global styles={whiteBackgroundCss} />;
-};

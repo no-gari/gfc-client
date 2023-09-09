@@ -1,4 +1,3 @@
-import mainTheme from '@/styles/theme';
 import {css} from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -10,46 +9,6 @@ const ExtendedButton = css`
   width: 100%;
 `;
 
-
-const PrimaryButton = css`
-  background-color: ${mainTheme.colors.primary};
-  color: ${mainTheme.colors.white};
-
-  &:active {
-    background-color: ${mainTheme.colors.secondary};
-  }
-
-  &:disabled {
-    background-color: ${mainTheme.colors.gray3};
-  }
-`;
-
-const SecondaryButton = css`
-  background-color: ${mainTheme.colors.black};
-  color: ${mainTheme.colors.white};
-
-  &:active {
-    background-color: ${mainTheme.colors.gray2};
-  }
-
-  &:disabled {
-    background-color: ${mainTheme.colors.gray3};
-  }
-`;
-
-const TertiaryButton = css`
-  background-color: ${mainTheme.colors.black};
-  color: ${mainTheme.colors.white};
-
-  &:active {
-    background-color: ${mainTheme.colors.gray2};
-  }
-
-  &:disabled {
-    background-color: ${mainTheme.colors.gray3};
-  }
-`;
-
 const StyledButton = styled.button`
   all: unset;
   cursor: pointer;
@@ -58,8 +17,45 @@ const StyledButton = styled.button`
   font-weight: 500;
   font-size: 1rem;
   text-align: center;
-  width: 100%;
 `;
 
+const PrimaryButton = styled(StyledButton)`
+  background-color: ${({ theme }) => theme.colors.primary};
+  color: ${({ theme }) => theme.colors.white};
 
-export { StyledButton, SmallButton, ExtendedButton, PrimaryButton, SecondaryButton, TertiaryButton};
+  &:active {
+    background-color: ${({ theme }) => theme.colors.secondary};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.gray2};
+  }
+`;
+
+const SecondaryButton = styled(StyledButton)`
+  background-color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.gray2};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.gray3};
+  }
+`;
+
+const TertiaryButton = styled(StyledButton)`
+  background-color: ${({ theme }) => theme.colors.black};
+  color: ${({ theme }) => theme.colors.white};
+
+  &:active {
+    background-color: ${({ theme }) => theme.colors.gray2};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.colors.gray3};
+  }
+`;
+
+export { SmallButton, ExtendedButton, PrimaryButton, SecondaryButton, TertiaryButton};
